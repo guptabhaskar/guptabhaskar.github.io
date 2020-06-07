@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/index.css">	
-
     <title>COVID-19 Tracker</title>
-  </head>
-  <body>
-	<div class="jumbotron jumbotron-fluid">
+    <link rel = "icon" href ="logo.jpg" type = "image/x-icon"> 
+</head> 
+<body> 
+    <div class="jumbotron jumbotron-fluid">
 			<div class="container">
-			<h1 class="display-4">COVID-19 Tracker</h1>
+			<h1 class="display-4"><i class="stethoscope icon"></i>COVID-19 Tracker</h1>
 			<h4 class="lead">Get to know if you are near a containment zone or not.</h4>
 			</div>
 	</div>
@@ -23,8 +23,15 @@
 		<p>
 			<textarea type="text" name="address" id="address" placeholder="Address"></textarea>
 		</p>
-		<input class="btn btn-info" type="submit" name="submit" id="submit">
-		<button class="btn btn-info" id="current">Use current location</button>
+		<input class="btn btn-outline-info" type="submit" name="submit" id="submit">
+		<button class="btn btn-outline-info" id="current">Use current location</button>
+		<select id="distance" name="distance" class="btn btn-outline-dark">
+			<option value=1000>1km</option>
+			<option value=2000>2km</option>
+			<option value=3000>3km</option>
+			<option value=4000>4km</option>
+			<option value=5000>5km</option>
+		</select>
 	</div>
 
 	<div id="modal1" class="modal">
