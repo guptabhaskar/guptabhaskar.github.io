@@ -71,6 +71,15 @@
     margin-top: 10px;
 }
 
+#current{
+    border-radius: 1000px;
+    border: solid 1px #1372fb;
+    background-color: #006DFF;
+    color: #fff;
+    padding: 5px 30px;
+    /*margin-top: 10px;*/
+}
+
 .form-label {
     display: block;
     margin-bottom: 10px;
