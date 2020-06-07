@@ -108,9 +108,9 @@ current.onclick=function(){
 function init() {
 	// console.log("Init");
   	var geocoder = new google.maps.Geocoder();
-  	button.addEventListener('click', function() {
+  	button.onclick=function() {
     geocodeAddress(geocoder);
-  });
+  };
 }
 
 function geocodeAddress(geocoder) {
