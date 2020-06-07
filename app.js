@@ -128,7 +128,7 @@ function geocodeAddress(geocoder) {
 	        console.log("Here");
 	      	latitude=results[0].geometry.location.lat();
 	      	longitude=results[0].geometry.location.lng();
-	      	console.log(latitude,longitude);
+	      	console.log("LatLng"+latitude+" "+longitude);
 	      	console.log("Here2.0");
 			// console.log(latitude,longitude);
 	      	findContainment1(latitude,longitude);
