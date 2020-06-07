@@ -109,7 +109,7 @@ current.onclick=function(){
 function init() {
 	// console.log("Init");
   	var geocoder = new google.maps.Geocoder();
-  	document.getElementById('submit').addEventListener('click', function() {
+  	button.addEventListener('click', function() {
     geocodeAddress(geocoder);
   });
 }
@@ -117,6 +117,7 @@ function init() {
 function geocodeAddress(geocoder) {
   var address = document.getElementById('address').value;
   // console.log("Address",address);
+  // console.log("Called",address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
     	// console.log("Results",results);

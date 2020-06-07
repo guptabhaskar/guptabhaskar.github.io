@@ -67,7 +67,7 @@
     border: solid 1px #1372fb;
     background-color: #006DFF;
     color: #fff;
-    padding: 8px 50px;
+    padding: 8px 30px;
     margin-top: 10px;
 }
 
@@ -87,4 +87,8 @@
 
 .form-label {
     margin-top: 0px !important;
+}
+
+hr.style2 {
+  border-top: 3px double #8c8b8b;
 }
