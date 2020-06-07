@@ -67,20 +67,15 @@ function findContainment1(latitude,longitude) {
 	  "lat": latitude,
 	  "radius": 5000
 	}
-	// Making a POST request using an axios instance from a connected library
 	axios.post(apiurl,object)
-	  // Handle a successful response from the server
 	  .then(response => {
-	          // Getting a data object from response that contains the necessary data from the server
-	          const data = response.data;
+			  const data = response.data;
 	          if(data.numberOfNearbyZones>0){
 	          	nearContainmentZone(data);
 	          }
 	          else{
 	          	notNearContainmentZone();
 	          }
-	          // console.log("data",data);
-	          // console.log(data.containmentZoneNames.length);
 	  })
 	  // Catch and print errors if any
 	  .catch(error => console.error('Error', error));
@@ -107,6 +102,7 @@ span2.onclick = function() {
 current.onclick=function(){
 	getLocation();
 }
+
 function init() {
   var geocoder = new google.maps.Geocoder();
   document.getElementById('submit').addEventListener('click', function() {
@@ -116,26 +112,22 @@ function init() {
 
 function geocodeAddress(geocoder) {
   var address = document.getElementById('address').value;
-  console.log(address);
+  console.log("Address",address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
+    	console.log("Results",results);
     	if(results.length==0)
 	    {
 	        alert("Address not found.")
 	    }
 	    else
 	    {
-	          	// console.log(data.results);
-	        console.log(results);
+	        // console.log(data.results);
+	        // console.log(results);
 	      	latitude=results[0].geometry.location.lat;
 	      	longitude=results[0].geometry.location.lng;
 	      	findContainment1(latitude,longitude);
 	    }
-      // resultsMap.setCenter(results[0].geometry.location);
-      // var marker = new google.maps.Marker({
-      //   map: resultsMap,
-      //   position: results[0].geometry.location
-      // });
     } 
     else {
       alert('Geocode was not successful for the following reason: ' + status);
