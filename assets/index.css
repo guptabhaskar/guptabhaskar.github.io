@@ -39,7 +39,10 @@
   height: 50%;
   width: 100%;
 }
+.container{
+  text-align: center; 
+}
 #address{
-  width: 300px;
-  height: 100px;
+  width: 210px;
+  height: 80px;
 }

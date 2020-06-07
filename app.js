@@ -13,7 +13,7 @@ var modal1Content = document.getElementById("modal1Content");
 var ContainmentZones = document.getElementById("ContainmentZones");
 var current=document.getElementById("current");
 var button=document.getElementById("submit");
-var apikey="AIzaSyB3kAwioi5Adu1oBvr-tYIxKub_DkJ4Lx8";
+// var apikey="AIzaSyB3kAwioi5Adu1oBvr-tYIxKub_DkJ4Lx8";
 
 var latitude;
 var longitude;
@@ -30,7 +30,7 @@ function findContainment(position) {
 	// "<br>Longitude: " + position.coords.longitude;
 	latitude=position.coords.latitude;
 	longitude=position.coords.longitude;
-	console.log(latitude,longitude);
+	// console.log(latitude,longitude);
 	var apiurl="https://data.geoiq.io/dataapis/v1.0/covid/nearbyzones";
 	var object={
 	  "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
@@ -107,60 +107,44 @@ span2.onclick = function() {
 current.onclick=function(){
 	getLocation();
 }
-
-button.onclick=function(){
-	var address=document.getElementById("address").value;
-	var platform = new H.service.Platform({
-	'apikey': apiKey
-	});
-
-	// Get an instance of the geocoding service:
-	var service = platform.getSearchService();
-
-	// Call the geocode method with the geocoding parameters,
-	// the callback and an error callback function (called if a
-	// communication error occurs):
-	service.geocode({
-	q: address
-	}, (result) => {
-	// Add a marker for each location found
-	console.log(result);
-	// result.items.forEach((item) => {
-	// map.addObject(new H.map.Marker(item.position));
-	// });
-	}, alert);
-	// var googleapi=apistart+address+apiend;
-	// // var object={
-	// //   "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
-	// //   "lng": longitude,
-	// //   "lat": latitude,
-	// //   "radius": 5000
-	// // }
-	// // Making a POST request using an axios instance from a connected library
-	// axios.post(googleapi)
-	//   // Handle a successful response from the server
-	//   .then(response => {
-	//           // Getting a data object from response that contains the necessary data from the server
-	//           const data = response.data;
-	//           if(data.results.length==0)
-	//           {
-	//           	alert("Address not found.")
-	//           }
-	//           else
-	//           {
-	//           	// console.log(data.results);
-	//           	latitude=data.results[0].geometry.location.lat;
-	//           	longitude=data.results[0].geometry.location.lng;
-	//           	findContainment1(latitude,longitude);
-	//           }
-	//           // console.log("Data2",data.results[0].geometry.location.lat);
-	//           // console.log("Data2",data.results[0].geometry.location.lng);
-	//           // console.log(data.containmentZoneNames.length);
-	//   })
-	//   // Catch and print errors if any
-	//   .catch(error => console.error('Error', error));
-	// // getLocation();
+function init() {
+  var geocoder = new google.maps.Geocoder();
+  document.getElementById('submit').addEventListener('click', function() {
+    geocodeAddress(geocoder);
+  });
 }
+
+function geocodeAddress(geocoder) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+    	if(results.length==0)
+	    {
+	        alert("Address not found.")
+	    }
+	    else
+	    {
+	          	// console.log(data.results);
+	      	latitude=results[0].geometry.location.lat;
+	      	longitude=results[0].geometry.location.lng;
+	      	findContainment1(latitude,longitude);
+	    }
+      // resultsMap.setCenter(results[0].geometry.location);
+      // var marker = new google.maps.Marker({
+      //   map: resultsMap,
+      //   position: results[0].geometry.location
+      // });
+    } 
+    else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+// button.onclick=function(){
+// 	// var address=document.getElementById("address").value;
+// 	geocodeAddress(geocoder);
+// }
 
 window.onclick = function(event) {
   if (event.target == modal1 || event.target == modal2) {
