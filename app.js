@@ -17,7 +17,6 @@ var button=document.getElementById("submit");
 
 var latitude;
 var longitude;
-var distance;
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(findContainment);
@@ -32,13 +31,13 @@ function findContainment(position) {
 	latitude=position.coords.latitude;
 	longitude=position.coords.longitude;
 	// console.log(latitude,longitude);
-	distance=document.getElementById('distance').value;
+	// distance=document.getElementById('distance').value;
 	var apiurl="https://data.geoiq.io/dataapis/v1.0/covid/nearbyzones";
 	var object={
 	  "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
 	  "lng": longitude,
 	  "lat": latitude,
-	  "radius": distance
+	  "radius": 5000
 	}
 
 	// Making a POST request using an axios instance from a connected library
@@ -63,12 +62,12 @@ function findContainment(position) {
 
 function findContainment1(latitude,longitude) {
 	var apiurl="https://data.geoiq.io/dataapis/v1.0/covid/nearbyzones";
-	distance=document.getElementById('distance').value;
+	// distance=document.getElementById('distance').value;
 	var object={
 	  "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
 	  "lng": longitude,
 	  "lat": latitude,
-	  "radius": distance
+	  "radius": 5000
 	}
 	axios.post(apiurl,object)
 	  .then(response => {
@@ -120,7 +119,7 @@ function geocodeAddress(geocoder) {
   // console.log("Called",address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
-    	// console.log("Results",results);
+    	console.log("Results",results);
     	if(results.length==0)
 	    {
 	        alert("Address not found.")
