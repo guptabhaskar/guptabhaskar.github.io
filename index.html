@@ -20,10 +20,17 @@
 			</div>
 	</div>
 	<div class="container">
-		<p>
-			<textarea type="text" name="address" id="address" placeholder="Address"></textarea>
-		</p>
-		<input class="btn btn-outline-info" type="submit" name="submit" id="submit">
+		<div class="row m-t-15 m-b-35">
+                <div class="col-md-12 text-center">
+                    <form id="search_address">
+                      <div class="address_form_container">
+                        <label class="form-label" for="address">FIND NEAREST CONTAINMENT ZONE</label>
+                        <input id="address" type="text" placeholder="Address">
+                      </div>
+                      <input id="submit" type="submit" value="Submit">
+                    </form> 
+                </div>
+        </div>
 		<button class="btn btn-outline-info" id="current">Use current location</button>
 		<select id="distance" name="distance" class="btn btn-outline-dark">
 			<option value=1000>1km</option>
@@ -38,7 +45,7 @@
 	  <!-- Modal content -->
 	  <div class="modal-content">
 	    <span id="close1" class="close">&times;</span>
-	    <h3 id="modal1Content">You are near to a containment zone.</h3>
+	    <h3 id="modal1Content">You are near a containment zone.</h3>
 	    <ul id="ContainmentZones">
 	    	<h3>Nearby Containment Zones:</h3>
 	    </ul>
