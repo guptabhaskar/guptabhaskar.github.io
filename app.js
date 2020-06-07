@@ -63,11 +63,12 @@ function findContainment(position) {
 
 function findContainment1(latitude,longitude) {
 	var apiurl="https://data.geoiq.io/dataapis/v1.0/covid/nearbyzones";
+	distance=document.getElementById('distance').value;
 	var object={
 	  "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
 	  "lng": longitude,
 	  "lat": latitude,
-	  "radius": 5000
+	  "radius": distance
 	}
 	axios.post(apiurl,object)
 	  .then(response => {
@@ -125,14 +126,8 @@ function geocodeAddress(geocoder) {
 	    }
 	    else
 	    {
-	        // console.log(data.results);
-	        // console.log(results);
-	        // console.log("Here");
 	      	latitude=results[0].geometry.location.lat();
 	      	longitude=results[0].geometry.location.lng();
-	      	// console.log("LatLng"+latitude+" "+longitude);
-	      	// console.log("Here2.0");
-			// console.log(latitude,longitude);
 	      	findContainment1(latitude,longitude);
 	    }
     } 
@@ -141,11 +136,6 @@ function geocodeAddress(geocoder) {
     }
   });
 }
-
-// button.onclick=function(){
-// 	// var address=document.getElementById("address").value;
-// 	geocodeAddress(geocoder);
-// }
 
 window.onclick = function(event) {
   if (event.target == modal1 || event.target == modal2) {
