@@ -116,6 +116,7 @@ function init() {
 
 function geocodeAddress(geocoder) {
   var address = document.getElementById('address').value;
+  console.log(address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
     	if(results.length==0)
@@ -125,6 +126,7 @@ function geocodeAddress(geocoder) {
 	    else
 	    {
 	          	// console.log(data.results);
+	        console.log(results);
 	      	latitude=results[0].geometry.location.lat;
 	      	longitude=results[0].geometry.location.lng;
 	      	findContainment1(latitude,longitude);
