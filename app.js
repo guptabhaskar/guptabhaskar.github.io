@@ -30,7 +30,7 @@ function findContainment(position) {
 	// "<br>Longitude: " + position.coords.longitude;
 	latitude=position.coords.latitude;
 	longitude=position.coords.longitude;
-	// console.log(latitude,longitude);
+	console.log(latitude,longitude);
 	var apiurl="https://data.geoiq.io/dataapis/v1.0/covid/nearbyzones";
 	var object={
 	  "key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtYWlsSWRlbnRpdHkiOiJndXB0YWJoYW51MTk5OUBnbWFpbC5jb20ifQ.kE6dbqkrarNLFUTDTLlRPvcqtJ8mxSd6TrgvjwqjpGU",
@@ -104,15 +104,16 @@ current.onclick=function(){
 }
 
 function init() {
-  var geocoder = new google.maps.Geocoder();
-  document.getElementById('submit').addEventListener('click', function() {
+	// console.log("Init");
+  	var geocoder = new google.maps.Geocoder();
+  	document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder);
   });
 }
 
 function geocodeAddress(geocoder) {
   var address = document.getElementById('address').value;
-  console.log("Address",address);
+  // console.log("Address",address);
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
     	console.log("Results",results);
@@ -126,6 +127,7 @@ function geocodeAddress(geocoder) {
 	        // console.log(results);
 	      	latitude=results[0].geometry.location.lat;
 	      	longitude=results[0].geometry.location.lng;
+			// console.log(latitude,longitude);
 	      	findContainment1(latitude,longitude);
 	    }
     } 
