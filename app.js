@@ -96,6 +96,7 @@ function notNearContainmentZone(){
 
 span1.onclick = function() {
   modal1.style.display = "none";
+  ContainmentZones.innerHTML="";
 }
 span2.onclick = function() {
   modal2.style.display = "none";
