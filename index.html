@@ -1,76 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/index.css">	
-    <title>COVID-19 Hotspot Tracker</title>
-    <link rel = "icon" href ="logo.jpg" type = "image/x-icon"> 
-	<script data-ad-client="ca-pub-8765843920710567" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head> 
-<body> 
-    <div class="jumbotron jumbotron-fluid">
-			<div class="container">
-			<h1 class="display-4"><i class="stethoscope icon"></i>COVID-19 Hotspot Tracker</h1>
-			<h4 class="lead">Get to know if you are near a containment zone or not.</h4>
-			</div>
-	</div>
-	<div class="container">
-		<div class="row m-t-15 m-b-35">
-                <div class="col-md-12 text-center">
-                      <div class="address_form_container">
-                        <label class="form-label" for="address">FIND NEAREST CONTAINMENT ZONE</label>
-                        <input id="address" type="text" placeholder="Address">
-                      </div>
-                      <input id="submit" type="submit" value="Submit">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Bhaskar Gupta</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">B</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">PROJECTS</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </nav>
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">BHASKAR GUPTA</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0">Full Stack Web Developer</p>
+            </div>
+        </header>
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PROJECTS</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Items-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/COVID.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Modal-->
+        <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Log Cabin</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/COVID.png" alt="Log Cabin"/>
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">A COVID-19 Hotspot Tracker that tells you about containment zones in 5Km radius of your current location or using the address provided.</p>
+                                    <a href="https://bhaskargupta.me/" class="btn btn-primary">Link to project</a>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-		<hr class="style2">
-			<p>OR</p>
-		<hr class="style2">
-		<button class="btn btn-outline-info" id="current">Use current location</button>
-	</div>
 
-	<div id="modal1" class="modal">
-	  <!-- Modal content -->
-	  <div class="modal-content">
-	    <span id="close1" class="close">&times;</span>
-	    <h3 id="modal1Content">You are near a containment zone.</h3>
-	    <ul id="ContainmentZones">
-	    	<h3>Containment Zones in Radius of 5Km:</h3>
-	    </ul>
-	    <div class="container">
-	    	<img class="tips" src="tips.png">
-		</div>
-	  </div>
-	</div>
-	<div id="modal2" class="modal">
-	  <!-- Modal content -->
-	  <div class="modal-content">
-	    <span id="close2" class="close">&times;</span>
-	    <p>You are not near to a containment zone.</p>
-	    <div class="container">
-	    	<img class="tips" src="tips.png">
-		</div>
-	  </div>
-	</div>
-
-
-	<h2 id="demo"></h2>
-
-	<!-- </div> -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3kAwioi5Adu1oBvr-tYIxKub_DkJ4Lx8&signed_in=true&callback=init"async defer></script> 
-</body>
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <p class="pre-wrap lead">I am a first-year undergraduate student pursuing a Bachelor's degree (B.E.) in Computer Science and Applied Mathematics at Indraprastha Institute of Information Technology (IIIT), Delhi.</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                        <p class="pre-wrap lead">I am a crazy full stack web developer who wants to explore every tech stack.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTACT</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Content-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="text-muted">Phone</div>
+                            <div class="lead font-weight-bold">+91 9205449332</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:bhaskar19237@iiitd.ac.in">bhaskar19237@iiitd.ac.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">LOCATION</h4>
+                        <p class="pre-wrap lead mb-0">Badarpur, New Delhi, India</p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">AROUND THE WEB</h4>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/guptabhanu1999">
+                                <i class="fab fa-fw fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/guptabhaskar">
+                                <i class="fab fa-fw fa-github"></i>
+                            </a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/bhaskar-gupta-760335188/">
+                                <i class="fab fa-fw fa-linkedin-in"></i>
+                            </a>
+                            <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/b_h_a_s_k_a_r/">
+                                <i class="fab fa-fw fa-instagram"></i>
+                            </a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="mb-4">Reach out to me!</h4>
+                        <p class="pre-wrap lead mb-0">Let's make something cool together? My inbox is open for all.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © bhaskargupta.me 2020</small></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
